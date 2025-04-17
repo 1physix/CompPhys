@@ -1,9 +1,16 @@
 from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
+from time import sleep
 
-img = np.asarray(Image.open("ayanimage.jpg"))
+final = np.asarray(Image.open("ayanimage.jpg")).copy()
+
+imgplot = plt.imshow(original)
 
 
-imgplot = plt.imshow(img)
+for row in range(len(final)):
+    final[row] = final[row][::-1]
+
+
+imgplot = plt.imshow(final)
 plt.show()
